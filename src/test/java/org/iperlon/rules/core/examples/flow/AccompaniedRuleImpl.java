@@ -8,17 +8,17 @@ import org.iperlon.rules.core.domain.Rule;
  */
 public class AccompaniedRuleImpl implements Rule {
 
-    @Context(value = "accompagnated", required = true)
-    private Boolean accompagnated;
+    @Context(value = "accompanied", required = true)
+    private Boolean accompanied;
 
     @Override
     public String name() {
-        return "Accompagnated rule";
+        return "Accompanied rule";
     }
 
     @Override
     public boolean when() {
-        return Boolean.TRUE.equals(accompagnated);
+        return Boolean.TRUE.equals(accompanied);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class FlowTest {
     @Test
     public void canTakeABeerIsAndAdultTest() throws Exception {
         RulesContext rulesContext = new RulesContext();
-        rulesContext.add("accompagnated", Boolean.FALSE);
+        rulesContext.add("accompanied", Boolean.FALSE);
         rulesContext.add("age",18);
         rulesContext.add("clientName","charlie");
         RuleExecution ruleExecution = purchaseAutorisationRulesGame.execute(rulesContext, false);
@@ -36,7 +36,7 @@ public class FlowTest {
     @Test
     public void canTakeABeerIsAChildButAccompaniedTest() throws Exception {
         RulesContext rulesContext = new RulesContext();
-        rulesContext.add("accompagnated", Boolean.TRUE);
+        rulesContext.add("accompanied", Boolean.TRUE);
         rulesContext.add("age",16);
         rulesContext.add("clientName","charlie");
         RuleExecution ruleExecution = purchaseAutorisationRulesGame.execute(rulesContext, false);
@@ -46,7 +46,7 @@ public class FlowTest {
     @Test
     public void canTakeABeerIsAChildAndNotAccompaniedTest() throws Exception {
         RulesContext rulesContext = new RulesContext();
-        rulesContext.add("accompagnated", Boolean.FALSE);
+        rulesContext.add("accompanied", Boolean.FALSE);
         rulesContext.add("age",16);
         rulesContext.add("clientName","charlie");
         RuleExecution ruleExecution = purchaseAutorisationRulesGame.execute(rulesContext, false);
@@ -57,7 +57,7 @@ public class FlowTest {
     public void canTakeABeerIsNotAClient() throws Exception {
         RulesContext rulesContext = new RulesContext();
         rulesContext.add("clientName","charlot");
-        rulesContext.add("accompagnated", Boolean.FALSE);
+        rulesContext.add("accompanied", Boolean.FALSE);
         rulesContext.add("age",21);
         RuleExecution ruleExecution = purchaseAutorisationRulesGame.execute(rulesContext, false);
         Assert.assertEquals(RuleExecutionStatus.FAILED, ruleExecution.getStatus());
